@@ -14,9 +14,9 @@ const AddBookmark = () => {
         setFormData(copy);
     }
 
-    const submitForm = async () => {
+    const submitForm = async e => {
+        e.preventDefault();
         await axios.post('/api/bookmark/addbookmark', formData);
-        console.log(user);
         navigate('/mybookmarks');
     }
    
